@@ -1,0 +1,25 @@
+#!/bin/bash
+
+case "$1" in
+    -h|--headphones|headphones|aux)
+        echo "Disabling Speakers..."
+        amixer -c 0 set 'Line Out'  mute
+        echo "Enabling Headphones..."
+        amixer -c 0 set 'Headphone' unmute
+        echo "Done."
+        ;;
+    -s|--speakers|speakers)
+        echo "Disabling Headphones..."
+        amixer -c 0 set 'Headphone' mute
+        echo "Enabling Speakers..."
+        amixer -c 0 set 'Line Out'  unmute
+        echo "Done."
+        ;;
+    -?|*)
+        echo "Usage:"
+        echo "Headphones: -h | --headphones | headphones | aux"
+        echo "Speakers: -s | --speakers | speakers"
+        echo "Help: -? | *"
+        ;;
+esac
+

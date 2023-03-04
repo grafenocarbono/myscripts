@@ -1,0 +1,27 @@
+#!/bin/bash
+sudo ufw allow 5901/tcp
+sudo apt install xfce4 xfce4-goodies tightvncserver
+sudo apt install tigervnc-common
+vncserver
+vncserver -kill :1
+echo "startxfce4" >> ~/.vnc/xstartup
+vncserver
+sudo tee /etc/systemd/system/vncserver.service > /dev/null <<'TXT'
+[Unit]
+Description=TightVNC server
+After=syslog.target network.target
+
+[Service]
+Type=forking
+User=root
+PAMName=login
+PIDFile=/root/.vnc/%H:1.pid
+ExecStartPre=-/usr/bin/vncserver -kill :1 > /dev/null 2>&1
+ExecStart=/usr/bin/vncserver
+ExecStop=/usr/bin/vncserver -kill :1
+
+[Install]
+WantedBy=multi-user.target
+TXT
+systemctl daemon-reload
+systemctl enable --now vncserver

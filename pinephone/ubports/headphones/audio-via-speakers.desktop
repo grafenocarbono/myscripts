@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Audio via speakers
+Exec=/home/phablet/.local/bin/switch-audio -s
+Icon=/usr/share/icons/Adwaita/256x256/devices/audio-speakers.png
+Terminal=true
+Type=Application
+X-Ubuntu-Touch=true
+

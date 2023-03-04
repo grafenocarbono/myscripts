@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Audio via headphones
+Exec=/home/phablet/.local/bin/switch-audio -h
+Icon=/usr/share/icons/Adwaita/256x256/devices/audio-headphones.png
+Terminal=true
+Type=Application
+X-Ubuntu-Touch=true
+
