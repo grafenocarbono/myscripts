@@ -13,6 +13,8 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	sudo apt install cargo -y
+
 	read -p "Shall I build you a test project?(y/n) " -n 1 -r
         echo		
 	if [[ $REPLY =~ ^[Yy]$ ]]
