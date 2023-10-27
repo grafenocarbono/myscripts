@@ -6,6 +6,7 @@ sudo apt upgrade
 sudo apt install mysql-server
 sudo apt-cache mysql-server
 sudo systemctl start mysql.service
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123qweASD_';
+sudo mysql_secure_installation
+printf "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123qweASD_';\n"
 sudo mysql
 mysql -u root -p
