@@ -1,0 +1,11 @@
+#!/bin/bash
+#password:123qweASD_
+sudo apt update
+sudo apt list --upgradable
+sudo apt upgrade
+sudo apt install mysql-server
+sudo apt-cache mysql-server
+sudo systemctl start mysql.service
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123qweASD_';
+sudo mysql
+mysql -u root -p
