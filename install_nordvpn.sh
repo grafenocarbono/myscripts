@@ -1,4 +1,5 @@
 !#/bin/bash
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
-nordvpn login
-nordvpn connect
+sudo usermod -aG nordvpn $USER
+sudo nordvpn login
+sudo nordvpn connect
