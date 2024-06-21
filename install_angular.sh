@@ -1,4 +1,3 @@
-#/bin/bash
 #!/bin/bash
 CK="\e[0;30m"
 RED="\e[0;31m"
