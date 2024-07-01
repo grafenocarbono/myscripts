@@ -81,6 +81,10 @@ mv node-v20.11.1-linux-x64.tar.xz $HOME/bin/node.tar.xz
 cd $HOME/bin
 tar xvf node.tar.xz
 echo "export PATH=$PATH:~/bin/node-v20.11.1-linux-x64/bin/" >> ~/.bashrc
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+echo 'export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> ~/.bashrc
+source ~/.bashrc
 sudo npm install -g @angular/cli
 sudo mv /usr/bin/node /usr/bin/node_old
 sudo cp ~/bin/node-v20.11.1-linux-x64/bin/* /usr/bin/
