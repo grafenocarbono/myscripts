@@ -127,16 +127,6 @@ export PATH="/home/grafeno30/bin/:/home/grafeno30/bin/myscripts:$PATH"
 
 tmux
 neofetch
-date "+%Y%m%d-%H:%m"
-
-
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-xkbset -ma 1 1 1000 9999 1000
-PS1="`date +[%Y%m%d_%T]`$ "
-
-Prettify prompt
 
 PROMPT_COMMAND=bash_prompt_command
 ## Call bash_promnt only once, then unset it (not needed any more)
