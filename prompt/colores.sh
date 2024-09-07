@@ -4,7 +4,7 @@
 ##  FUNCTIONS                                                                 ##
 ################################################################################
 
-##
+## MODIFIED BY GRAFENOCARBONO
 ## ARRANGE $PWD AND STORE IT IN $NEW_PWD
 ## * The home directory (HOME) is replaced with a ~
 ## * The last pwdmaxlen characters of the PWD are displayed
@@ -314,7 +314,11 @@ bash_prompt() {
  ## BASH PROMT                                                             ##
  ## Generate promt and remove format from the rest                         ##
  ############################################################################
- PS1="$TITLEBAR\n${PROMT_USER}${SEPARATOR_1}${PROMT_HOST}${SEPARATOR_2}${PROMT_PWD}${SEPARATOR_3}${PROMT_INPUT}"
+FECHA=`date +"%Y%m%d_%T"`
+SISTEMA=`lsb_release -d | cut -d':' -f 2 | sed -E "s/[[:space:]]+/ /g"`
+
+
+ PS1="$TITLEBAR\n${TEXT_FORMAT_1}${FECHA}${SEPARATOR_1}${SISTEMA}${SEPARATOR_2}${PROMT_PWD}${SEPARATOR_3}${PROMT_INPUT}"
 
  
 
