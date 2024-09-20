@@ -79,9 +79,9 @@ dialog --title "Created by grafeno30" \
 if test -s $tmp_file ; then
 	passvar=`cat $tmp_file`
 fi
-docker run --name contenedor_mysql -e MYSQL_ROOT_PASSWORD=$passvar -d mysql
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=$passvar -d mysql
 
-docker exec -it contenedor_mysql mysql -uroot -p
+docker exec -it mysql mysql -uroot -p
 
 fi	
 
