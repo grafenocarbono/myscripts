@@ -54,7 +54,7 @@ printf "$BOLD_BLACK Do you agree?(y/n) $RESET"
 read -n 1 -r
 
 
-sudo apt install dialog -y
+#sudo apt install dialog -y
 
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -71,17 +71,23 @@ if [[ $answer -eq 1 ]]
 then
 
 
-dialog --title "Created by grafeno30" \
-	--inputbox \
-	"Please, enter your new mysql password" 15 30 'enter here'
+#dialog --title "Created by grafeno30" \
+#	--inputbox \
+#	"Please, enter your new mysql password" 15 30 'enter here'
 
 
-if test -s $tmp_file ; then
-	passvar=`cat $tmp_file`
-fi
-docker run --name mysql -e MYSQL_ROOT_PASSWORD=$passvar -d mysql
+#if test -s $tmp_file ; then
+#	passvar=`cat $tmp_file`
+#fi
+docker run --name mysql -e MYSQL_ROOT_PASSWORD="123qweASD_" -d mysql
 
-docker exec -it mysql mysql -uroot -p
+echo "Password:123qweASD_"
+
+docker run mysql
+
+docker inspect mysql | grep IP
+
+echo "mysql -h IP_address -u root -p"
 
 fi	
 
