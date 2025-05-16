@@ -1,0 +1,13 @@
+#!/bin/bash
+
+docker run --name mysql_nocturno -e MYSQL_ROOT_PASSWORD="123qweASD_" -d mysql
+
+echo "Password:123qweASD_"
+
+docker run mysql_nocturno
+
+docker inspect mysql_nocturno | grep IP
+
+echo "mysql -h IP_address -u root -p"
+
+
